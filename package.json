@@ -1,0 +1,27 @@
+{
+  "name": "node.js_course_practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StarAxion/Node.js_Course_Practice.git"
+  },
+  "author": "Mariia Trachuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StarAxion/Node.js_Course_Practice/issues"
+  },
+  "homepage": "https://github.com/StarAxion/Node.js_Course_Practice#readme",
+  "description": "homework project",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
