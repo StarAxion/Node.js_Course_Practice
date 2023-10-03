@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { COURSES } = require('../utils/constants');
+const { COURSES } = require('../data/constants');
 
 /**
  * @swagger
