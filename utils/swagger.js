@@ -2,7 +2,7 @@ const swaggerUI = require('swagger-ui-express');
 
 const swaggerJSDoc = require('swagger-jsdoc');
 
-const { SERVER_URL: url } = require('../data/constants');
+const { SERVER_URL: url } = require('../utils/constants');
 
 const options = {
   definition: {

@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { COURSES } = require('../data/constants');
+const courses = require('../data/courses');
 
 /**
  * @swagger
@@ -48,7 +48,7 @@ const { COURSES } = require('../data/constants');
  */
 
 router.get('/', (req, res) => {
-  res.json(COURSES);
+  res.json(courses);
 });
 
 /**
@@ -80,7 +80,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res, next) => {
   const courseId = req.params.id;
-  const course = COURSES.find(({ id }) => id === courseId);
+  const course = courses.find(({ id }) => id === courseId);
   if (course) {
     res.json(course);
   } else {

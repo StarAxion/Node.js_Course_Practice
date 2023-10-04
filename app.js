@@ -6,7 +6,7 @@ const router = require('./routes/index');
 
 const errorHandler = require('./middleware/errorHandler'); 
 
-const { PORT } = require('./data/constants'); 
+const { PORT } = require('./utils/constants'); 
 
 app.use(router);
 
