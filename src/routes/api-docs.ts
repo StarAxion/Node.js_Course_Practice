@@ -1,8 +1,8 @@
-const express = require('express');
+import { Router } from 'express';
 
-const router = express.Router();
+import setupSwagger from '../utils/swagger';
 
-const { swaggerUI, swaggerSpec } = require('../utils/swagger');
+const router = Router();
 
 /**
  * @swagger
@@ -16,6 +16,6 @@ const { swaggerUI, swaggerSpec } = require('../utils/swagger');
  *         description: OK - Successfully accessed Swagger UI.
  */
 
-router.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
+setupSwagger(router, '/api-docs');
 
-module.exports = router;
+export default router;
