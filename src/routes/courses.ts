@@ -1,8 +1,17 @@
-const express = require('express');
+import {
+  Router,
+  type Request,
+  type Response,
+  type NextFunction
+} from 'express';
 
-const router = express.Router();
+import { COURSES } from '../data/courses';
 
-const courses = require('../data/courses');
+import { type Course } from '../models/course';
+import { type CourseReqParams } from '../models/courseReqParams';
+import { type CustomError } from '../models/customError';
+
+const router = Router();
 
 /**
  * @swagger
@@ -47,8 +56,8 @@ const courses = require('../data/courses');
  *         description: Internal Server Error - An unexpected error occurred on the server.
  */
 
-router.get('/', (req, res) => {
-  res.json(courses);
+router.get('/', (req: Request, res: Response): void => {
+  res.json(COURSES);
 });
 
 /**
@@ -78,16 +87,21 @@ router.get('/', (req, res) => {
  *         description: Internal Server Error - An unexpected error occurred on the server.
  */
 
-router.get('/:id', (req, res, next) => {
-  const courseId = req.params.id;
-  const course = courses.find(({ id }) => id === courseId);
-  if (course) {
-    res.json(course);
-  } else {
-    const error = new Error('Course not found');
-    error.status = 404;
-    next(error);
+router.get(
+  '/:id',
+  (req: Request<CourseReqParams>, res: Response, next: NextFunction): void => {
+    const courseId: string = req.params.id;
+    const course: Course | undefined = COURSES.find(
+      ({ id }) => id === courseId
+    );
+    if (course) {
+      res.json(course);
+    } else {
+      const error: CustomError = new Error('Course not found');
+      error.status = 404;
+      next(error);
+    }
   }
-});
+);
 
-module.exports = router;
+export default router;

@@ -1,6 +1,6 @@
-const express = require('express');
+import { Router, type Request, type Response } from 'express';
 
-const router = express.Router();
+const router = Router();
 
 /**
  * @swagger
@@ -14,8 +14,8 @@ const router = express.Router();
  *         description: OK - The server is running.
  */
 
-router.get('/health-check', (req, res) => {
+router.get('/health-check', (req: Request, res: Response): void => {
   res.json({ status: 'The server is running' });
 });
 
-module.exports = router;
+export default router;
