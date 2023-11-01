@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import setupSwagger from '../utils/swagger';
+import setupSwagger from '../utils/swaggerConfig';
 
 const router = Router();
 
@@ -10,10 +10,10 @@ const router = Router();
  *   get:
  *     tags:
  *       - API documentation
- *     description: Swagger API documentation.
+ *     description: Swagger API documentation
  *     responses:
  *       200:
- *         description: OK - Successfully accessed Swagger UI.
+ *         description: Successfully accessed Swagger UI
  */
 
 setupSwagger(router, '/api-docs');

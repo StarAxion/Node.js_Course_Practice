@@ -1,32 +1,20 @@
-import {
-  Router,
-  type Request,
-  type Response,
-  type NextFunction
-} from 'express';
+import { Router } from 'express';
 
-import apiDocsRoute from './api-docs';
-import serverStatusRoute from './serverStatus';
-import coursesRoutes from './courses';
+import apiDocsRoute from './api-docs.route';
+import serverStatusRoute from './serverStatus.route';
+import moviesRoutes from './movies.routes';
+import genresRoutes from './genres.routes';
 
-import { type CustomError } from '../models/customError';
+import rootRedirect from '../controllers/root.controller';
+import notFoundErrorHandler from '../controllers/notFoundError.controller';
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response): void => {
-  res.redirect('/courses');
-});
-
+router.get('/', rootRedirect);
 router.use(apiDocsRoute);
-
 router.use(serverStatusRoute);
-
-router.use('/courses', coursesRoutes);
-
-router.use((req: Request, res: Response, next: NextFunction): void => {
-  const error: CustomError = new Error('Page not found');
-  error.status = 404;
-  next(error);
-});
+router.use('/api/movies', moviesRoutes);
+router.use('/api/genres', genresRoutes);
+router.use(notFoundErrorHandler);
 
 export default router;
