@@ -1,4 +1,4 @@
-import mongoose, { type Document, Schema } from 'mongoose';
+import mongoose, { Document, Schema } from 'mongoose';
 
 import GenreModel from './genre.model';
 

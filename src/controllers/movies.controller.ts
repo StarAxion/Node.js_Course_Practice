@@ -1,10 +1,7 @@
-import { type Request, type Response, type NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
-import MovieModel, { type MovieBody } from '../models/movie.model';
-import {
-  type ReqParamsId,
-  type ReqParamsGenreName
-} from '../models/ReqParams.model';
+import MovieModel, { MovieBody } from '../models/movie.model';
+import { ReqParamsId, ReqParamsGenreName } from '../models/ReqParams.model';
 
 import initCustomError from '../utils/initCustomError';
 import { statusCodes, errorMessages } from '../utils/constants';

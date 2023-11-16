@@ -1,6 +1,6 @@
-import { type Request, type Response, type NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
-import { type CustomError } from '../models/customError.model';
+import { CustomError } from '../models/customError.model';
 
 import { statusCodes, errorMessages } from '../utils/constants';
 

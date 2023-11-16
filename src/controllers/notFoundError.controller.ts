@@ -1,4 +1,4 @@
-import { type Request, type Response, type NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
 import initCustomError from '../utils/initCustomError';
 import { statusCodes, errorMessages } from '../utils/constants';

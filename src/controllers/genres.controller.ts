@@ -1,7 +1,7 @@
-import { type Request, type Response, type NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
-import GenreModel, { type GenreBody } from '../models/genre.model';
-import { type ReqParamsId } from '../models/ReqParams.model';
+import GenreModel, { GenreBody } from '../models/genre.model';
+import { ReqParamsId } from '../models/ReqParams.model';
 
 import initCustomError from '../utils/initCustomError';
 import { statusCodes, errorMessages } from '../utils/constants';

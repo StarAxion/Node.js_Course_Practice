@@ -1,7 +1,6 @@
-import { type Router } from 'express';
+import { Router } from 'express';
 
 import swaggerJSDoc from 'swagger-jsdoc';
-
 import swaggerUI from 'swagger-ui-express';
 
 import { SERVER_URL as url } from './constants';

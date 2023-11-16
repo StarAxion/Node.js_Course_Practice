@@ -1,6 +1,6 @@
-import { type NextFunction } from 'express';
+import { NextFunction } from 'express';
 
-import { type CustomError } from '../models/customError.model';
+import { CustomError } from '../models/customError.model';
 
 const initCustomError = (
   next: NextFunction,
