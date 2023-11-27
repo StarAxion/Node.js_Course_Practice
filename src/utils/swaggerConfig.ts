@@ -1,10 +1,9 @@
-import { type Router } from 'express';
+import { Router } from 'express';
 
 import swaggerJSDoc from 'swagger-jsdoc';
-
 import swaggerUI from 'swagger-ui-express';
 
-import { SERVER_URL as url } from '../utils/constants';
+import { SERVER_URL as url } from './constants';
 
 const options: swaggerJSDoc.Options = {
   definition: {
@@ -16,7 +15,7 @@ const options: swaggerJSDoc.Options = {
     },
     servers: [{ url }]
   },
-  apis: ['./src/routes/*.ts']
+  apis: ['./src/routes/*.ts', './src/models/*.ts']
 };
 
 const swaggerSpec = swaggerJSDoc(options);
