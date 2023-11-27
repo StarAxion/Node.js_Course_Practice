@@ -31,6 +31,12 @@
         "ignore": [0, 1, -1]
       }
     ],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/no-extraneous-class": "off",
