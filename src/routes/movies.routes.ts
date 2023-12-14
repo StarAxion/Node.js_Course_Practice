@@ -1,5 +1,6 @@
 import { Router } from 'express';
 
+import { routes } from '../utils/constants';
 import MoviesController from '../controllers/movies.controller';
 
 const router = Router();
@@ -45,8 +46,8 @@ const router = Router();
  *         description: Movie already exists
  */
 
-router.get('/', MoviesController.getAllMovies);
-router.post('/', MoviesController.createMovie);
+router.get(routes.root, MoviesController.getAllMovies);
+router.post(routes.root, MoviesController.createMovie);
 
 /**
  * @swagger
@@ -122,9 +123,9 @@ router.post('/', MoviesController.createMovie);
  *         description: Movie not found
  */
 
-router.get('/:id', MoviesController.getMovieById);
-router.put('/:id', MoviesController.updateMovie);
-router.delete('/:id', MoviesController.deleteMovie);
+router.get(routes.idParams, MoviesController.getMovieById);
+router.put(routes.idParams, MoviesController.updateMovie);
+router.delete(routes.idParams, MoviesController.deleteMovie);
 
 /**
  * @swagger
@@ -154,6 +155,6 @@ router.delete('/:id', MoviesController.deleteMovie);
  *         description: Movies not found
  */
 
-router.get('/genre/:genreName', MoviesController.searchMoviesByGenre);
+router.get(routes.genreParams, MoviesController.searchMoviesByGenre);
 
 export default router;

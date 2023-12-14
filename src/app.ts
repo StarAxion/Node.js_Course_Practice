@@ -1,9 +1,8 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 
 import router from './routes';
 import errorHandler from './middleware/errorHandler.middleware';
+import { connectToDatabase } from './utils/database';
 import { PORT } from './utils/constants';
 
 const app = express();
@@ -12,17 +11,12 @@ app.use(express.json());
 app.use(router);
 app.use(errorHandler);
 
-dotenv.config();
-
-if (process.env.DB_URI) {
-  mongoose
-    .connect(process.env.DB_URI)
-    .then(() => {
-      app.listen(PORT);
-    })
-    .catch((err) => {
-      console.error(err);
+connectToDatabase()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
     });
-} else {
-  throw new Error('DB_URI environment variable is missing');
-}
+  })
+  .catch((err) => {
+    console.error(err);
+  });

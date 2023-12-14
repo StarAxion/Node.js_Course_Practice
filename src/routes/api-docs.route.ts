@@ -1,5 +1,6 @@
 import { Router } from 'express';
 
+import { routes } from '../utils/constants';
 import setupSwagger from '../utils/swaggerConfig';
 
 const router = Router();
@@ -16,6 +17,6 @@ const router = Router();
  *         description: Successfully accessed Swagger UI
  */
 
-setupSwagger(router, '/api-docs');
+setupSwagger(router, routes.apiDocs);
 
 export default router;

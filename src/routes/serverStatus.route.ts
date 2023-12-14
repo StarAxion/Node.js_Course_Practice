@@ -1,5 +1,6 @@
 import { Router } from 'express';
 
+import { routes } from '../utils/constants';
 import serverStatusCheck from '../controllers/serverStatus.controller';
 
 const router = Router();
@@ -23,6 +24,6 @@ const router = Router();
  *                   type: string
  */
 
-router.get('/health-check', serverStatusCheck);
+router.get(routes.serverStatus, serverStatusCheck);
 
 export default router;
