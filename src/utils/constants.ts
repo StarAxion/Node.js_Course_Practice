@@ -5,7 +5,21 @@ export const PORT: number = isNaN(ENV_PORT) ? PORT_NUM : ENV_PORT;
 
 export const SERVER_URL: string = `http://localhost:${PORT}`;
 
+export const NO_DB_URI: string = 'DB_URI environment variable is missing';
+
+export const SERVER_STATUS_MSG = 'The server is running';
+
 export const minTextLength: number = 10;
+
+export const routes = {
+  root: '/',
+  apiDocs: '/api-docs',
+  serverStatus: '/health-check',
+  movies: '/api/movies',
+  genres: '/api/genres',
+  idParams: '/:id',
+  genreParams: '/genre/:genreName'
+};
 
 export const statusCodes = {
   OK: 200,

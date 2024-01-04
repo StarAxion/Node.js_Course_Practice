@@ -1,5 +1,6 @@
 import { Router } from 'express';
 
+import { routes } from '../utils/constants';
 import GenresController from '../controllers/genres.controller';
 
 const router = Router();
@@ -45,8 +46,8 @@ const router = Router();
  *         description: Genre already exists
  */
 
-router.get('/', GenresController.getAllGenres);
-router.post('/', GenresController.createGenre);
+router.get(routes.root, GenresController.getAllGenres);
+router.post(routes.root, GenresController.createGenre);
 
 /**
  * @swagger
@@ -122,8 +123,8 @@ router.post('/', GenresController.createGenre);
  *         description: Genre not found
  */
 
-router.get('/:id', GenresController.getGenreById);
-router.put('/:id', GenresController.updateGenre);
-router.delete('/:id', GenresController.deleteGenre);
+router.get(routes.idParams, GenresController.getGenreById);
+router.put(routes.idParams, GenresController.updateGenre);
+router.delete(routes.idParams, GenresController.deleteGenre);
 
 export default router;

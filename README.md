@@ -1,5 +1,6 @@
 ﻿# Node.js_Course_Practice
 
+![check-code-coverage](https://img.shields.io/badge/code--coverage-95.23%25-brightgreen)
 ![GitHub](https://img.shields.io/github/license/StarAxion/Node.js_Course_Practice)
 ![GitHub issues](https://img.shields.io/github/issues/StarAxion/Node.js_Course_Practice)
 ![GitHub stars](https://img.shields.io/github/stars/StarAxion/Node.js_Course_Practice)
@@ -40,7 +41,11 @@ To run the project, you can use the following scripts defined in the `package.js
 
 ### Scripts
 
-- **test**: Runs tests (currently, it echoes "Error: no test specified").
+- **test**: Runs tests using Jest and outputs results.
+
+- **test:coverage**: Runs tests with coverage report and updates coverage badge.
+
+- **test:dev**: Runs tests in watch mode with more detailed output and coverage report.
 
 - **build**: Removes the existing build directory and compiles TypeScript files into JavaScript.
 
